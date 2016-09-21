@@ -1,0 +1,8 @@
+#!/usr/local/zend/apache2/htdocs/python/racc/venv/bin/python
+"""
+Format and compress XML documents
+"""
+import xmlformatter
+
+if __name__ == "__main__":
+	xmlformatter.cli()
