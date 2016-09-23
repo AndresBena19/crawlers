@@ -74,8 +74,6 @@ class BasicPageSpider(SitemapSpider):
                 finalasset = folder + '/' + a['href']
                 if a['href'][0] == '/':
                     finalasset = a['href']
-                if '../' in a['href']:
-                    finalasset = '/' + a['href'].replace("../", "")
                 a['href'] = '/sites/default/files/imported' + finalasset
             else:
                 a['href'] = a['href']
@@ -88,8 +86,6 @@ class BasicPageSpider(SitemapSpider):
                 finalImg = folder + '/' + img['src']
                 if img['src'][0] == '/':
                     finalImg = img['src']
-                if '../' in img['src']:
-                    finalImg = '/' + img['src'].replace("../", "")
                 img['src'] = '/sites/default/files/imported' + finalImg
 
         # Final basic page body as an string, remove linebreaks
@@ -130,6 +126,7 @@ class BasicPageSpider(SitemapSpider):
             '/HR/logins.aspx': {'uid': '41', 'oldurl': 'HR/logins.aspx','newurl': '/about-racc/employee-logins'},
             '/HR/faq.aspx': {'uid': '42', 'oldurl': 'HR/faq.aspx', 'newurl': '/about-racc/faq'},
             '/HR/application.aspx': {'uid': '43', 'oldurl': 'HR/application.aspx', 'newurl': '/about-racc/job-application'},
+            '/Academics/Advising/default.aspx': {'uid': '49', 'oldurl': 'Academics/Advising/default.aspx','newurl': '/academics/academic-advising'},
         }
 
         if key in mapuid:
