@@ -62,9 +62,11 @@ class BasicPageSpider(SitemapSpider):
 
         # Review links
         for a in content.findAll('a', href=True):
-            extensionsToCheck = ('.pdf', '.doc', '.xls', '.ppt')
+            extensionsToCheck = ('.pdf', '.doc', '.xls', '.ppt', 'docx')
 
             urlCheck = self.mapuid(a['href'])
+            if urlCheck['newurl'] == '':
+                urlCheck = self.mapuid(folder + '/' + a['href'])
 
             if urlCheck['newurl'] != '':
                 a['href'] = urlCheck['newurl']
@@ -127,6 +129,36 @@ class BasicPageSpider(SitemapSpider):
             '/HR/faq.aspx': {'uid': '42', 'oldurl': 'HR/faq.aspx', 'newurl': '/about-racc/faq'},
             '/HR/application.aspx': {'uid': '43', 'oldurl': 'HR/application.aspx', 'newurl': '/about-racc/job-application'},
             '/Academics/Advising/default.aspx': {'uid': '49', 'oldurl': 'Academics/Advising/default.aspx','newurl': '/academics/academic-advising'},
+            '/Academics/enrichment.aspx': {'uid': '50', 'oldurl': 'Academics/enrichment.aspx','newurl': '/academics/academic-enrichment'},
+            '/CommunityEd/default.aspx': {'uid': '51', 'oldurl': 'CommunityEd/default.aspx','newurl': '/academics/community-education'},
+            '/Academics/ESL/default.aspx': {'uid': '61', 'oldurl': 'Academics/ESL/default.aspx','newurl': '/academics/esl-program'},
+            '/Academics/Honors/default.aspx': {'uid': '65', 'oldurl': 'Academics/Honors/default.aspx','newurl': '/academics/honors-program'},
+            '/Academics/Health-Professions/default.aspx': {'uid': '76', 'oldurl': 'Academics/Health-Professions/default.aspx','newurl': '/academics/health-professions'},
+            '/Online/default.aspx': {'uid': '82','oldurl': 'Online/default.aspx','newurl': '/academics/online-learning'},
+            '/STTC/default.aspx': {'uid': '94', 'oldurl': 'STTC/default.aspx','newurl': '/academics/schmidt-training-and-technology-center'},
+            '/Academics/technicalAcademy.aspx': {'uid': '119', 'oldurl': 'Academics/technicalAcademy.aspx', 'newurl': '/academics/technical-academy'},
+            '/Yocum/default.aspx': {'uid': '120', 'oldurl': 'Yocum/default.aspx','newurl': '/academics/yocum-library'},
+            '/CommunityEd/careerTrainProg.aspx': {'uid': '53', 'oldurl': 'CommunityEd/careerTrainProg.aspx', 'newurl': '/academics/career-training-programs'},
+            '/CommunityEd/HCPS/commandSpanish.aspx': {'uid': '97', 'oldurl': 'CommunityEd/HCPS/commandSpanish.aspx','newurl': '/academics/command-spanish'},
+            '/CommunityEd/register.aspx': {'uid': '55', 'oldurl': 'CommunityEd/register.aspx','newurl': '/academics/course-catalogs-course-registration'},
+            '/CommunityEd/GED.aspx': {'uid': '56', 'oldurl': 'CommunityEd/GED.aspx','newurl': '/academics/earn-ged'},
+            '/CommunityEd/ESL.aspx': {'uid': '57', 'oldurl': 'CommunityEd/ESL.aspx','newurl': '/academics/esl-programs'},
+            '/CommunityEd/HCPS/default.aspx': {'uid': '113', 'oldurl': 'CommunityEd/HCPS/default.aspx','newurl': '/academics/health-care'},
+            '/CommunityEd/online_nonCredit.aspx': {'uid': '59', 'oldurl': 'CommunityEd/online_nonCredit.aspx','newurl': '/academics/online-career-training'},
+            '/CommunityEd/wits.aspx': {'uid': '60', 'oldurl': 'CommunityEd/wits.aspx','newurl': '/academics/personal-trainer-certification'},
+            '/Academics/ESL/courses.aspx': {'uid': '62', 'oldurl': 'Academics/ESL/courses.aspx','newurl': '/academics/esl-courses'},
+            '/Academics/ESL/learningCenter.aspx': {'uid': '63', 'oldurl': 'Academics/ESL/learningCenter.aspx','newurl': '/academics/learning-center'},
+            '/Academics/ESL/staff.aspx': {'uid': '64', 'oldurl': 'Academics/ESL/staff.aspx','newurl': '/academics/esl-staff'},
+            '/Academics/Honors/benefits.aspx': {'uid': '66', 'oldurl': 'Academics/Honors/benefits.aspx','newurl': '/academics/benefits'},
+            '/Academics/Honors/credit.aspx': {'uid': '67', 'oldurl': 'Academics/Honors/credit.aspx','newurl': '/academics/earning-honors-credit'},
+            '/Academics/Honors/eligible.aspx': {'uid': '68', 'oldurl': 'Academics/Honors/eligible.aspx','newurl': '/academics/eligibility'},
+            '/Academics/Honors/faq.aspx': {'uid': '69', 'oldurl': 'Academics/Honors/faq.aspx','newurl': '/academics/faq'},
+            '/Academics/Honors/courses.aspx': {'uid': '334', 'oldurl': 'Academics/Honors/courses.aspx','newurl': '/academics/honors-courses'},
+            '/Academics/Honors/faculty.aspx': {'uid': '70', 'oldurl': 'Academics/Honors/faculty.aspx','newurl': '/academics/academics/honors-faculty'},
+            '/Academics/Honors/committee.aspx': {'uid': '71', 'oldurl': 'Academics/Honors/committee.aspx','newurl': '/academics/honors-committee'},
+            '/Academics/Honors/supervise.aspx': {'uid': '72', 'oldurl': 'Academics/Honors/supervise.aspx','newurl': '/academics/supervising-honors-contract'},
+            '/Academics/Honors/options.aspx': {'uid': '74', 'oldurl': 'Academics/Honors/options.aspx','newurl': '/academics/program-options'},
+            '/Academics/Honors/scholarship.aspx': {'uid': '75', 'oldurl': 'Academics/Honors/scholarship.aspx','newurl': '/academics/academics/scholarships'},
         }
 
         if key in mapuid:
