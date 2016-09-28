@@ -62,7 +62,7 @@ class BasicPageSpider(SitemapSpider):
 
         # Review links
         for a in content.findAll('a', href=True):
-            extensionsToCheck = ('.pdf', '.doc', '.xls', '.ppt', 'docx')
+            extensionsToCheck = ('.pdf', '.doc', '.xls', '.ppt', 'docx', 'xlsx', 'pptx', 'zip', 'rar')
 
             urlCheck = self.mapuid(a['href'])
             if urlCheck['newurl'] == '':
@@ -128,6 +128,7 @@ class BasicPageSpider(SitemapSpider):
             '/HR/logins.aspx': {'uid': '41', 'oldurl': 'HR/logins.aspx','newurl': '/about-racc/employee-logins'},
             '/HR/faq.aspx': {'uid': '42', 'oldurl': 'HR/faq.aspx', 'newurl': '/about-racc/faq'},
             '/HR/application.aspx': {'uid': '43', 'oldurl': 'HR/application.aspx', 'newurl': '/about-racc/job-application'},
+
             '/Academics/Advising/default.aspx': {'uid': '49', 'oldurl': 'Academics/Advising/default.aspx','newurl': '/academics/academic-advising'},
             '/Academics/enrichment.aspx': {'uid': '50', 'oldurl': 'Academics/enrichment.aspx','newurl': '/academics/academic-enrichment'},
             '/CommunityEd/default.aspx': {'uid': '51', 'oldurl': 'CommunityEd/default.aspx','newurl': '/academics/community-education'},
@@ -159,6 +160,33 @@ class BasicPageSpider(SitemapSpider):
             '/Academics/Honors/supervise.aspx': {'uid': '72', 'oldurl': 'Academics/Honors/supervise.aspx','newurl': '/academics/supervising-honors-contract'},
             '/Academics/Honors/options.aspx': {'uid': '74', 'oldurl': 'Academics/Honors/options.aspx','newurl': '/academics/program-options'},
             '/Academics/Honors/scholarship.aspx': {'uid': '75', 'oldurl': 'Academics/Honors/scholarship.aspx','newurl': '/academics/academics/scholarships'},
+            '/StudentLife/Services/Assessment/default.aspx': {'uid': '148', 'oldurl': 'StudentLife/Services/Assessment/default.aspx','newurl': '/admissions/assessment-services'},
+            '/Admissions/Enrollment/default.aspx': {'uid': '156','oldurl': 'Admissions/Enrollment/default.aspx','newurl': '/admissions/enrollment'},
+            '/Admissions/FAQ.aspx': {'uid': '170', 'oldurl': 'Admissions/FAQ.aspx','newurl': '/admissions/faq-0'},
+            '/FinancialAid/default.aspx': {'uid': '171', 'oldurl': 'FinancialAid/default.aspx','newurl': '/admissions/financial-aid'},
+            '/Orientation/default.aspx': {'uid': '208', 'oldurl': 'Orientation/default.aspx','newurl': '/admissions/orientation'},
+            '/Admissions/Placement/default.aspx': {'uid': '209', 'oldurl': 'Admissions/Placement/default.aspx','newurl': '/admissions/placement-testing'},
+            '/Ravens/default.aspx': {'uid': '213', 'oldurl': 'Ravens/default.aspx','newurl': '/admissions/raven-ambassadors'},
+            '/Admissions/staff.aspx': {'uid': '215', 'oldurl': 'Admissions/staff.aspx','newurl': '/admissions/staff'},
+            '/Transfer/default.aspx': {'uid': '216', 'oldurl': 'Transfer/default.aspx','newurl': '/admissions/transfer-services-0'},
+            '/Tuition/default.aspx': {'uid': '228', 'oldurl': 'Tuition/default.aspx','newurl': '/admissions/tuition-and-fees'},
+            '/StudentLife/Clubs/default.aspx': {'uid': '233', 'oldurl': 'StudentLife/Clubs/default.aspx','newurl': '/student-life/clubs-and-organizations'},
+            '/StudentLife/Services/FitnessCenter/default.aspx': {'uid': '235', 'oldurl': 'StudentLife/Services/FitnessCenter/default.aspx','newurl': '/student-life/fitness-center'},
+            '/StudentLife/leadership.aspx': {'uid': '236', 'oldurl': 'StudentLife/leadership.aspx','newurl': '/student-life/leadership-program'},
+            '/StudentLife/RACCy/default.aspx': {'uid': '237', 'oldurl': 'StudentLife/RACCy/default.aspx','newurl': '/student-life/raccy-olympics'},
+            '/Academics/catalogs.aspx': {'uid': '238', 'oldurl': 'Academics/catalogs.aspx','newurl': '/student-life/student-handbook'},
+
+            '/StudentLife/Services/default.aspx': {'uid': '239', 'oldurl': 'StudentLife/Services/default.aspx','newurl': '/student-life/clubs-and-organizations'},
+            '/About/Directions/campusmap.aspx': {'uid': '303', 'oldurl': 'About/Directions/campusmap.aspx','newurl': '/contacts/campus-map-and-directions'},
+            '/About/Directions/default.aspx': {'uid': '307', 'oldurl': 'About/Directions/default.aspx','newurl': '/contacts/main-campus-directions'},
+            '/About/Directions/offSite.aspx': {'uid': '308', 'oldurl': 'About/Directions/contacts/site-locations','newurl': '/contacts/campus-map-and-directions'},
+            '/IT/default.aspx': {'uid': '304', 'oldurl': 'IT/default.aspx','newurl': '/contacts/information-services'},
+            '/IT/contact_info.aspx': {'uid': '309', 'oldurl': 'IT/contact_info.aspx', 'newurl': '/contacts/contact-it-staff'},
+            '/IT/lab_hours.aspx': {'uid': '310', 'oldurl': 'IT/lab_hours.aspx','newurl': '/contacts/computer-lab-hours'},
+            '/IT/computer_policy.aspx': {'uid': '311', 'oldurl': 'IT/computer_policy.aspx','newurl': '/contacts/computer-usage-policy'},
+            '/IT/faculty_staff.aspx': {'uid': '312', 'oldurl': 'IT/faculty_staff.aspx','newurl': '/contacts/faculty-and-staff'},
+            '/IT/web_support.aspx': {'uid': '313', 'oldurl': 'IT/web_support.aspx','newurl': '/contacts/website-support'},
+            '/Safety/default.aspx': {'uid': '306', 'oldurl': 'Safety/default.aspx','newurl': '/contacts/safety-security'},
         }
 
         if key in mapuid:
