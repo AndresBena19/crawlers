@@ -19,7 +19,11 @@ class NewsSpider(scrapy.Spider):
                 child.extract()
 
         x = 0
-        for art in content.findAll('article'):
+
+        articles = content.findAll('article')
+        articles.reverse()
+
+        for art in articles:
 
             body = art.span
             if body is None:
