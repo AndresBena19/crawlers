@@ -367,24 +367,9 @@ class BasicPageSpider(SitemapSpider):
             '/UpwardBound/links.aspx': {'uid': '290', 'newurl': '/student-life/important-links'},
             '/UpwardBound/staff.aspx': {'uid': '289', 'newurl': '/student-life/upward-staff'},
             '/StudentLife/Services/Veterans/default.aspx': {'uid': '294', 'newurl': '/student-life/veterans-services'},
-
-            '/UpwardBound/staff.aspx': {'uid': '289', 'newurl': '/student-life/upward-staff'},
-            '/UpwardBound/staff.aspx': {'uid': '289', 'newurl': '/student-life/upward-staff'},
-            '/UpwardBound/staff.aspx': {'uid': '289', 'newurl': '/student-life/upward-staff'},
-            '/UpwardBound/staff.aspx': {'uid': '289', 'newurl': '/student-life/upward-staff'},
-            '/UpwardBound/staff.aspx': {'uid': '289', 'newurl': '/student-life/upward-staff'},
-            '/UpwardBound/staff.aspx': {'uid': '289', 'newurl': '/student-life/upward-staff'},
-            '/UpwardBound/staff.aspx': {'uid': '289', 'newurl': '/student-life/upward-staff'},
-            '/UpwardBound/staff.aspx': {'uid': '289', 'newurl': '/student-life/upward-staff'},
-
-
-
-
-
-
-
-
-
+            '/StudentLife/Services/Veterans/approved-programs.aspx': {'uid': '297', 'newurl': '/student-life/approved-programs'},
+            '/StudentLife/Services/Veterans/resources.aspx': {'uid': '300', 'newurl': '/student-life/resources-veterans'},
+            '/StudentLife/Services/Veterans/community.aspx': {'uid': '299', 'newurl': '/student-life/racc-veterans-community'},
 
             '/About/Directions/campusmap.aspx': {'uid': '303', 'newurl': '/contacts/campus-map-and-directions'},
             '/About/Directions/default.aspx': {'uid': '307', 'newurl': '/contacts/main-campus-directions'},
